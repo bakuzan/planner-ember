@@ -1,1 +1,33 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+@import url('./reset.css');
+@import url('./general.css');
+
+:root {
+  --app-font-family: 'Lucida Console', 'Consolas', 'monospace';
+  --app-font-size: 16px;
+  --app-standard-padding: 4px;
+  --app-link-colour: #4682b4;
+  --app-theme-colour: #003153;
+  --app-navbar-height: 50px;
+
+  font-family: var(--app-font-family);
+  font-size: var(--app-font-size);
+}
+
+main {
+  height: calc(100vh - var(--app-navbar-height));
+  padding: var(--app-standard-padding);
+}
+
+/* nav-bar */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  background-color: var(--app-theme-colour);
+  height: var(--app-navbar-height);
+  padding: var(--app-standard-padding);
+}
+
+.nav-bar h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}

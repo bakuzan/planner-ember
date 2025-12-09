@@ -1,12 +1,8 @@
-import { pageTitle } from 'ember-page-title';
-import { WelcomePage } from 'ember-welcome-page';
+import NavBar from 'planner-ember/components/nav-bar';
 
 <template>
-  {{pageTitle "PlannerEmber"}}
-
-  {{outlet}}
-
-  {{! The following component displays Ember's default welcome message. }}
-  <WelcomePage />
-  {{! Feel free to remove this! }}
+  <NavBar />
+  <main>
+    {{outlet}}
+  </main>
 </template>

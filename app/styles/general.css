@@ -1,0 +1,10 @@
+a {
+  text-decoration: none;
+  color: var(--app-link-colour);
+}
+
+a:focus,
+a:hover,
+a:active {
+  text-decoration: underline;
+}

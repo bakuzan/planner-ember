@@ -2,6 +2,7 @@
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 const { compatBuild } = require('@embroider/compat');
+const postcssImport = require('postcss-import');
 
 module.exports = async function (defaults) {
   const { buildOnce } = await import('@embroider/vite');
@@ -15,7 +16,11 @@ module.exports = async function (defaults) {
         DEPRECATE_STORE_EXTENDS_EMBER_OBJECT: false,
       },
     },
-    // Add options here
+    postcssOptions: {
+      compile: {
+        plugins: [postcssImport()],
+      },
+    },
   });
 
   return compatBuild(app, buildOnce);
