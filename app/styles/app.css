@@ -7,7 +7,9 @@
   --app-standard-padding: 4px;
   --app-link-colour: #4682b4;
   --app-theme-colour: #003153;
+  --app-faded-text: #747474;
   --app-navbar-height: 50px;
+  --app-border-radius: 4px;
 
   font-family: var(--app-font-family);
   font-size: var(--app-font-size);
@@ -30,4 +32,46 @@ main {
 .nav-bar h1 {
   font-size: 1.5rem;
   margin: 0;
+}
+
+/* schedule-list */
+.schedules {
+  padding: var(--app-standard-padding);
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.label,
+.help-text {
+  font-size: 0.8rem;
+  color: var(--app-faded-text);
+  margin: var(--app-standard-padding) 0;
+}
+
+.results {
+  list-style-type: none;
+  padding: var(--app-standard-padding);
+}
+
+/* schedule-card */
+.schedule {
+  padding: var(--app-standard-padding);
+  border: 1px solid transparent;
+  border-radius: var(--app-border-radius);
+}
+
+.schedule:hover {
+  border-color: var(--app-theme-colour);
+}
+
+.schedule-actions {
+  display: flex;
+  padding: var(--app-standard-padding);
+}
+
+.schedule-actions > * {
+  margin: 0 var(--app-standard-padding);
 }

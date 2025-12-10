@@ -7,22 +7,13 @@ module('Integration | Component | nav-bar', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    // Updating values is achieved using autotracking, just like in app code. For example:
-    // class State { @tracked myProperty = 0; }; const state = new State();
-    // and update using state.myProperty = 1; await rerender();
-    // Handle any actions with function myAction(val) { ... };
+    // Arrange
 
+    // Act
     await render(<template><NavBar /></template>);
 
-    assert.dom().hasText('');
-
-    // Template block usage:
-    await render(<template>
-      <NavBar>
-        template block text
-      </NavBar>
-    </template>);
-
-    assert.dom().hasText('template block text');
+    // Assert
+    assert.dom('nav').exists();
+    assert.dom('h1').hasText('Planner');
   });
 });
