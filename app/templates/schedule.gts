@@ -1,8 +1,23 @@
 import { pageTitle } from 'ember-page-title';
+import Component from '@glimmer/component';
 
-<template>
-  {{pageTitle "Schedule"}}
+interface ScheduleArgs {
+  model: {
+    schedule_id: number;
+    name: string;
+    description: string;
+  };
+}
 
-  <h2>{{@model.name}}</h2>
-  <p>{{@model.description}}</p>
-</template>
+export default class Schedule extends Component<ScheduleArgs> {
+  get pageTitle() {
+    return this.args.model?.name || 'Schedule';
+  }
+
+  <template>
+    {{pageTitle this.pageTitle}}
+
+    <h2>{{@model.name}}</h2>
+    <p>{{@model.description}}</p>
+  </template>
+}

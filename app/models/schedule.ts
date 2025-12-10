@@ -1,7 +1,7 @@
 import Model, { attr } from '@ember-data/model';
 
 export default class ScheduleModel extends Model {
-  @attr schedule_id;
-  @attr name;
-  @attr description;
+  @attr declare schedule_id: number;
+  @attr declare name: string;
+  @attr declare description: string;
 }
