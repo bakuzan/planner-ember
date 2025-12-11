@@ -1,13 +1,18 @@
 import Route from '@ember/routing/route';
+import { service } from '@ember/service';
+import { findRecord } from '@ember-data/json-api/request';
+
 import type ScheduleModel from 'planner-ember/models/schedule';
+import type Store from 'planner-ember/services/store';
 
 export default class ScheduleRoute extends Route {
+  @service declare store: Store;
+
   async model(params: Record<string, unknown>): Promise<ScheduleModel> {
-    return await Promise.resolve({
-      schedule_id: Number(params.schedule_id),
-      name: 'Test Schedule',
-      description:
-        'A test schedule that is hard-coded so I can build up a UI to start with.',
-    });
+    const { content } = await this.store.request(
+      findRecord('schedule', params.id)
+    );
+    console.log('SCHEDULE :: ', content);
+    return content.data;
   }
 }

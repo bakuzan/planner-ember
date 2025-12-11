@@ -5,6 +5,7 @@ module.exports = function (environment) {
     modulePrefix: 'planner-ember',
     environment,
     rootURL: '/',
+    apiHost: null,
     locationType: 'history',
     EmberENV: {
       EXTEND_PROTOTYPES: false,

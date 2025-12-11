@@ -10,7 +10,7 @@ module('Integration | Component | schedule-card', function (hooks) {
   test('it renders information about a schedule', async function (assert) {
     class State {
       @tracked schedule = {
-        schedule_id: 1,
+        id: 1,
         name: 'Test Schedule',
         description:
           'A test schedule that is hard-coded so I can build up a UI to start with.',

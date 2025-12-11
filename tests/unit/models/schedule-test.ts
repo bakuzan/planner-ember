@@ -8,7 +8,7 @@ module('Unit | Model | rental', function (hooks) {
     const store = this.owner.lookup('service:store');
 
     const schedule = store.createRecord('schedule', {
-      schedule_id: 1,
+      id: 1,
       name: 'Test Schedule',
       description: 'My test schedule is just something to test with.',
     });

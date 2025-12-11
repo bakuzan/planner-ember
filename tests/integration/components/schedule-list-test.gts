@@ -16,15 +16,15 @@ module('Integration | Component | schedules', function (hooks) {
   hooks.beforeEach(function () {
     state.schedules = [
       {
-        schedule_id: 1,
+        id: 1,
         name: 'Test Schedule',
       },
       {
-        schedule_id: 2,
+        id: 2,
         name: 'Another Schedule',
       },
       {
-        schedule_id: 3,
+        id: 3,
         name: 'Third Schedule',
       },
     ];

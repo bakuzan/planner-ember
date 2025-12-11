@@ -3,7 +3,7 @@ import Component from '@glimmer/component';
 
 interface ScheduleArgs {
   model: {
-    schedule_id: number;
+    id: number;
     name: string;
     description: string;
   };

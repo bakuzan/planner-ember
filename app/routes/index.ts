@@ -1,27 +1,16 @@
 import Route from '@ember/routing/route';
+import { service } from '@ember/service';
+import { query } from '@ember-data/json-api/request';
+
 import type ScheduleModel from 'planner-ember/models/schedule';
+import type Store from 'planner-ember/services/store';
 
 export default class IndexRoute extends Route {
+  @service declare store: Store;
+
   async model(): Promise<ScheduleModel[]> {
-    return await Promise.resolve([
-      {
-        schedule_id: 1,
-        name: 'Test Schedule',
-        description:
-          'A test schedule that is hard-coded so I can build up a UI to start with.',
-      },
-      {
-        schedule_id: 2,
-        name: 'Another Schedule',
-        description:
-          'Another schedule that is hard-coded so I can build up a UI to start with.',
-      },
-      {
-        schedule_id: 3,
-        name: 'Third Schedule',
-        description:
-          'Yet a third schedule that is hard-coded so I can build up a UI to start with.',
-      },
-    ]);
+    const { content } = await this.store.request(query('schedule'));
+    console.log('INDEX :: ', content);
+    return content.data;
   }
 }
