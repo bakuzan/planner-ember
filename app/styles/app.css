@@ -20,6 +20,11 @@ main {
   padding: var(--app-standard-padding);
 }
 
+.category-block {
+  font-weight: bold;
+  color: attr(data-colour);
+}
+
 /* nav-bar */
 .nav-bar {
   display: flex;
